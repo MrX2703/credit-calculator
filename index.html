@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Credit Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Subject Credit Calculator</h1>
+
+    <div id="student-type">
+        <h2>Select Student Type</h2>
+        <label><input type="radio" name="student" value="regular" onclick="showSemesters()"> Regular</label>
+        <label><input type="radio" name="student" value="dsy" onclick="showSemesters()"> DSY</label>
+    </div>
+
+    <div id="semester-selection" class="hidden">
+        <!-- Semesters content -->
+        <div class="semester hidden" id="semester-1">
+            <h2>Semester 1</h2>
+            <label><input type="checkbox" class="all-clear" onclick="toggleAllClear(1, 9)"> All Clear (9 Credits)</label>
+            <div class="subjects">
+                <label><input type="checkbox" value="3" class="subject"> Subject 1 (3)</label>
+                <label><input type="checkbox" value="4" class="subject"> Subject 2 (4)</label>
+                <label><input type="checkbox" value="2" class="subject"> Subject 3 (2)</label>
+            </div>
+        </div>
+
+        <div class="semester hidden" id="semester-2">
+            <h2>Semester 2</h2>
+            <label><input type="checkbox" class="all-clear" onclick="toggleAllClear(2, 10)"> All Clear (10 Credits)</label>
+            <div class="subjects">
+                <label><input type="checkbox" value="3" class="subject"> Subject 1 (3)</label>
+                <label><input type="checkbox" value="4" class="subject"> Subject 2 (4)</label>
+                <label><input type="checkbox" value="3" class="subject"> Subject 3 (3)</label>
+            </div>
+        </div>
+
+        <div class="semester hidden" id="semester-3">
+            <h2>Semester 3</h2>
+            <label><input type="checkbox" class="all-clear" onclick="toggleAllClear(3, 12)"> All Clear (12 Credits)</label>
+            <div class="subjects">
+                <label><input type="checkbox" value="4" class="subject"> Subject 1 (4)</label>
+                <label><input type="checkbox" value="3" class="subject"> Subject 2 (3)</label>
+                <label><input type="checkbox" value="5" class="subject"> Subject 3 (5)</label>
+            </div>
+        </div>
+
+        <div class="semester hidden" id="semester-4">
+            <h2>Semester 4</h2>
+            <label><input type="checkbox" class="all-clear" onclick="toggleAllClear(4, 9)"> All Clear (9 Credits)</label>
+            <div class="subjects">
+                <label><input type="checkbox" value="3" class="subject"> Subject 1 (3)</label>
+                <label><input type="checkbox" value="2" class="subject"> Subject 2 (2)</label>
+                <label><input type="checkbox" value="4" class="subject"> Subject 3 (4)</label>
+            </div>
+        </div>
+
+        <button onclick="calculateCredits()">Calculate Credits</button>
+    </div>
+
+    <div id="result" class="hidden">
+        <h2>Credit Calculation</h2>
+        <div class="credits">Semester 1: <span id="semester-1-credits">0</span></div>
+        <div class="credits">Semester 2: <span id="semester-2-credits">0</span></div>
+        <div class="credits">Semester 3: <span id="semester-3-credits">0</span></div>
+        <div class="credits">Semester 4: <span id="semester-4-credits">0</span></div>
+        <h2>Total Credits: <span id="total-credits">0</span></h2>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
